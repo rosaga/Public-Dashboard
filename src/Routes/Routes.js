@@ -14,8 +14,8 @@ function Routes() {
       <Router>
         <div>
           <Switch>
-            <Route path="/" exact component={DiseaseSurveilance} />
-            <Route path="/MCH" exact component={MCH} />
+            <Route path="/DiseaseSurveilance" exact component={DiseaseSurveilance} />
+            <Route path="/" exact component={MCH} />
 
           </Switch>
         </div>

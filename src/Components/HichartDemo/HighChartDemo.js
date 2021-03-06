@@ -3,12 +3,14 @@ import React, { useContext } from "react";
 import { DiseaseSurveillanceContext } from "../../Contexts/DiseaseSurveillance/DiseaseSurveillance";
 var Highcharts = require("highcharts/highmaps");
 
-function HighChartDemo() {
-    const {dataToMap}=useContext(DiseaseSurveillanceContext)
-    console.log(dataToMap)
+function HighChartDemo(props) {
+
+    // const {dataToMap,mapPeriods}=useContext(DiseaseSurveillanceContext)
+    const {data,chartType,period}=props;
+    // console.log(dataToMap)
   let options = {
     chart: {
-      type: "column",
+      type: chartType,
     },
     title: {
       text: "Monthly Average Rainfall",
@@ -17,20 +19,7 @@ function HighChartDemo() {
       text: "Source: WorldClimate.com",
     },
     xAxis: {
-      categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
+      categories: period,
       crosshair: true,
     },
     yAxis: {
@@ -54,7 +43,7 @@ function HighChartDemo() {
         borderWidth: 0,
       },
     },
-        series: dataToMap
+        series: data
   };
 
   return <HighchartsReact highcharts={Highcharts} options={options} />;

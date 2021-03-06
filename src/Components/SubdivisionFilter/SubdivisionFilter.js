@@ -7,6 +7,7 @@ import { appOrgUnits } from "../../Constants/orgunits";
 import { periods } from "../../Constants/periods";
 import { OrgUnitsContext } from "../../Contexts/OrgUnitsContext/OrgUnitsContext";
 import SelectPeriod from "../SelectPeriod/SelectPeriod";
+import { DiseaseSurveillanceContext } from "../../Contexts/DiseaseSurveillance/DiseaseSurveillance";
 
 function SubdivisionFilter() {
   const districts = appOrgUnits[0].organisationUnits;
@@ -15,8 +16,10 @@ function SubdivisionFilter() {
     handleDistrictChange,
     handleChiefdomSelect,
     handleFacilityChange,
-    facilities,
+    facilities, SetOuSelected
   } = useContext(OrgUnitsContext);
+
+  const {handlePeriodChange}=useContext(DiseaseSurveillanceContext)
 
   return (
     <div>
@@ -36,13 +39,13 @@ function SubdivisionFilter() {
           </div>
           <div class="col">
             <FacilitySelect
-              handleChange={handleFacilityChange}
+              handleChange={SetOuSelected}
               values={facilities}
             />
           </div>
 
           <div class="col">
-            <SelectPeriod values={periods} />
+            <SelectPeriod handleChange={handlePeriodChange} values={periods} />
           </div>
         </div>
       </AppRow>

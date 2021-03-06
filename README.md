@@ -1,3 +1,5 @@
+This web application pulls data from DHIS2 and displays in a public dashboard.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

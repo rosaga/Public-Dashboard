@@ -7,7 +7,7 @@ export const OrgUnitsContextProvider = (props) => {
   const { children } = props;
   const [chiefDoms, SetChiefDoms] = useState([]);
   const [facilities, SetFacilities] = useState([]);
-  const [ouSelected,SetOuSelected]=useState("");
+  const [ouSelected,SetOuSelected]=useState("ImspTQPwCqd");
 
   const getChiefDoms = (distID) => {
     justFetch(
@@ -52,8 +52,15 @@ export const OrgUnitsContextProvider = (props) => {
   };
 
   const handleFacilityChange = (val) => {
-    SetOuSelected(val)
-  };
+    // console.log(val)
+
+if(val !== "") 
+{
+  SetOuSelected(val)
+
+}
+
+};
 
   useEffect(() => {
     //   getChiefDoms()
@@ -71,7 +78,8 @@ export const OrgUnitsContextProvider = (props) => {
         handleDistrictChange,
         handleChiefdomSelect,
         handleFacilityChange,
-        ouSelected
+        ouSelected,
+        SetOuSelected
       }}
     >
       {children}

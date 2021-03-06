@@ -8,7 +8,6 @@ function DiseaseSurveilance() {
             <h1>Disease Surveillance</h1>
             <hr></hr>
      <SubdivisionFilter></SubdivisionFilter>
-     <HighChartDemo></HighChartDemo>
         </div>
     )
 }
