@@ -1,4 +1,11 @@
-This web application pulls data from DHIS2 and displays in a public dashboard.
+This web application pulls data from DHIS2 web API and displays in a public Dashboard.
+
+The application uses a middleware built on nodejs.
+
+
+
+
+
 
 # Getting Started with Create React App
 
