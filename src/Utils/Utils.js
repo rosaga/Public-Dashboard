@@ -2,6 +2,31 @@ import { justFetch } from "../Services/JustFetchService";
 
 const getPeriodName = (dataPe, dataItems) => {
     // console.log("getting period")
+    
+  let data = [];
+
+//   console.log({dataPe})
+  console.log({dataItems})
+//   return 0
+
+//   return 0;
+
+  dataPe.map((pe) => {
+    //   console.log(dataItems[parseInt(pe)].name)
+    // console.log(dataItems[202012].name)
+    //   return 0
+    let periodName = "";
+    periodName = dataItems[parseInt(pe)].name;
+      console.log(periodName)
+    data = [...data, periodName];
+  });
+
+  return data;
+};
+
+const getPeriodName2 = (dataPe, dataItems) => {
+    // console.log("getting period")
+    
   let data = [];
 
   console.log({dataPe})
@@ -58,4 +83,4 @@ const generateDataToMap = (datadx, dataRows, dataItems) => {
   return mapData;
 };
 
-export { getPeriodName, getData, generateDataToMap };
+export { getPeriodName, getData, generateDataToMap,getPeriodName2 };

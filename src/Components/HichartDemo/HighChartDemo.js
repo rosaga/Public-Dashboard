@@ -1,11 +1,11 @@
 import HighchartsReact from "highcharts-react-official";
 import React, { useContext } from "react";
-import { DiseaseSurveillanceContext } from "../../Contexts/DiseaseSurveillance/DiseaseSurveillance";
+import { ANCCoverageContext } from "../../Contexts/ANCCoverage/ANCCoverage";
 var Highcharts = require("highcharts/highmaps");
 
 function HighChartDemo(props) {
 
-    // const {dataToMap,mapPeriods}=useContext(DiseaseSurveillanceContext)
+    // const {dataToMap,mapPeriods}=useContext(ANCCoverageContext)
     const {data,chartType,period}=props;
     // console.log(dataToMap)
   let options = {

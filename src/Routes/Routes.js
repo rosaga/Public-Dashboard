@@ -11,15 +11,16 @@ import MCH from "../Pages/MCH/MCH";
 function Routes() {
   return (
     <div>
-      <Router>
+      
         <div>
           <Switch>
-            <Route path="/DiseaseSurveilance" exact component={DiseaseSurveilance} />
+            
             <Route path="/" exact component={MCH} />
+            <Route path="/DiseaseSurveilance"  component={DiseaseSurveilance} />
 
           </Switch>
         </div>
-      </Router>
+     
     </div>
   );
 }

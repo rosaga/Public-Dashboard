@@ -1,10 +1,16 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../../Contexts/AppContext/AppContext'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 function AppNav(props) {
     const { appName } = useContext(AppContext)
     return (
-        <div>
+        
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">{appName}</a>
@@ -14,20 +20,18 @@ function AppNav(props) {
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <Link class="nav-link active" aria-current="page" to="/">Mother Child Health Dashboard</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link 1</a>
+                                <Link class="nav-link" to="/DiseaseSurveilance">Disease Surveillance Dashboard</Link>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link 2</a>
-                            </li>
+                         
 
                         </ul>
                     </div>
                 </div>
             </nav>
-        </div>
+       
     )
 }
 

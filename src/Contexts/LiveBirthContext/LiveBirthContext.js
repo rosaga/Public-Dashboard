@@ -7,7 +7,7 @@ export const LiveBirthContext = createContext();
 
 export const LiveBirthContextProvider = (props) => {
   const { children } = props;
-  const [period, SetPeriod] = useState("LAST_12_MONTHS");
+  
   const [dataPe, SetDataPe] = useState([]);
   const [datadx, SetDataDx] = useState([]);
   const [dataRows, SetDataRows] = useState([]);
@@ -15,11 +15,11 @@ export const LiveBirthContextProvider = (props) => {
   const [allData, SetAllData] = useState([]);
   const [dataToMap, SetDataToMap] = useState([]);
   const [mapPeriods, setMapPeriods] = useState([]);
-  const { ouSelected } = useContext(OrgUnitsContext);
+  const { ouSelected ,period,period2} = useContext(OrgUnitsContext);
 
   const getLiveBirths = async () => {
     let url = `
-    https://play.dhis2.org/2.35.1/api/29/analytics.json?dimension=dx:gQNFkFkObU8;HZSdnO5fCUc&dimension=pe:${period}&dimension=ou:${ouSelected}&displayProperty=NAME&outputIdScheme=UID
+    https://play.dhis2.org/2.34.3/api/29/analytics.json?dimension=dx:gQNFkFkObU8;HZSdnO5fCUc&dimension=pe:${period2}&dimension=ou:${ouSelected}&displayProperty=NAME&outputIdScheme=UID
     `;
 
     let getDataApi = await justFetch(url, {});
@@ -27,14 +27,17 @@ export const LiveBirthContextProvider = (props) => {
     console.log({ res });
     SetAllData(await res);
     SetDataDx(await res.metaData.dimensions.dx);
-    SetDataItems(await res.metaData.items);
     SetDataPe(await res.metaData.dimensions.pe);
+    SetDataItems(await res.metaData.items);
     SetDataRows(await res.rows);
   };
 
   useEffect(() => {
+      setTimeout(() => {
     getLiveBirths();
-  }, [period, ouSelected]);
+          
+      }, 1000);
+  }, [period2, ouSelected]);
 
   useEffect(() => {
     // generateDataForMap();
@@ -46,7 +49,7 @@ export const LiveBirthContextProvider = (props) => {
   useEffect(() => {
     // console.log("getting dara")
     setMapPeriods(getPeriodName(dataPe, dataItems));
-  }, [dataPe, dataItems]);
+  }, [dataItems]);
 
   return (
     <LiveBirthContext.Provider

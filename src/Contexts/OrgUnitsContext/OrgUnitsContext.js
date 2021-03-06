@@ -4,10 +4,24 @@ import { justFetch } from "../../Services/JustFetchService";
 export const OrgUnitsContext = createContext();
 
 export const OrgUnitsContextProvider = (props) => {
+  const [period, SetPeriod]= useState("LAST_12_MONTHS");
+  const [period2, SetPeriod2]= useState("LAST_12_MONTHS");
+
   const { children } = props;
   const [chiefDoms, SetChiefDoms] = useState([]);
   const [facilities, SetFacilities] = useState([]);
   const [ouSelected,SetOuSelected]=useState("ImspTQPwCqd");
+
+  const handlePeriodChange = (val) => {
+
+    console.log(val);
+
+    // return 0;
+  
+      SetPeriod2(val);
+    
+
+  };
 
   const getChiefDoms = (distID) => {
     justFetch(
@@ -79,7 +93,11 @@ if(val !== "")
         handleChiefdomSelect,
         handleFacilityChange,
         ouSelected,
-        SetOuSelected
+        SetOuSelected,
+        handlePeriodChange,
+        period,
+        period2
+
       }}
     >
       {children}
