@@ -3,6 +3,7 @@ import { AppContextProvider } from "../Contexts/AppContext/AppContext";
 import { DiseaseSurveillanceProvider } from "../Contexts/DiseaseSurveillance/DiseaseSurveillance";
 import { DeliveriesContextProvider } from "../Contexts/DeliveriesContext/DeliveriesContext";
 import { OrgUnitsContextProvider } from "../Contexts/OrgUnitsContext/OrgUnitsContext";
+import { LiveBirthContextProvider } from "../Contexts/LiveBirthContext/LiveBirthContext";
 
 function ContextProviders(props) {
   const { children } = props;
@@ -12,7 +13,11 @@ function ContextProviders(props) {
       <AppContextProvider>
         <OrgUnitsContextProvider>
           <DeliveriesContextProvider>
-          <DiseaseSurveillanceProvider>{children}</DiseaseSurveillanceProvider>
+          <DiseaseSurveillanceProvider>
+            <LiveBirthContextProvider>
+            {children}
+            </LiveBirthContextProvider>
+          </DiseaseSurveillanceProvider>
           </DeliveriesContextProvider>
         </OrgUnitsContextProvider>
       </AppContextProvider>

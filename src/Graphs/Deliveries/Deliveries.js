@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import HighChartDemo from '../../Components/HichartDemo/HighChartDemo'
-import SubdivisionFilter from '../../Components/SubdivisionFilter/SubdivisionFilter'
 import { DeliveriesContext } from '../../Contexts/DeliveriesContext/DeliveriesContext'
-import { DiseaseSurveillanceContext } from '../../Contexts/DiseaseSurveillance/DiseaseSurveillance'
 
 function Deliveries() {
     const {dataToMap,mapPeriods}=useContext(DeliveriesContext)
