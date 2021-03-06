@@ -14,6 +14,7 @@ function MCH() {
       <hr></hr>
       <SubdivisionFilter></SubdivisionFilter>
       <HighChartDemo
+      graphTitle="ANC Coverage"
         data={dataToMap}
         chartType="column"
         period={mapPeriods}

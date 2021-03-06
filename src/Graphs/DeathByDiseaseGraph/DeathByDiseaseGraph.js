@@ -10,7 +10,7 @@ function DeathByDiseaseGraph() {
         <div>
            
             {/* <SubdivisionFilter></SubdivisionFilter> */}
-     <HighChartDemo data={dataToMap} chartType="column" period={mapPeriods}></HighChartDemo>
+     <HighChartDemo graphTitle="Death By Disease" data={dataToMap} chartType="column" period={mapPeriods}></HighChartDemo>
             
         </div>
     )

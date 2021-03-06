@@ -9,7 +9,7 @@ function DiseaseSurveillanceGraph() {
         <div>
            
             {/* <SubdivisionFilter></SubdivisionFilter> */}
-     <HighChartDemo data={dataToMap} chartType="column" period={mapPeriods}></HighChartDemo>
+     <HighChartDemo graphTitle="Disease Surveillance" data={dataToMap} chartType="column" period={mapPeriods}></HighChartDemo>
             
         </div>
     )

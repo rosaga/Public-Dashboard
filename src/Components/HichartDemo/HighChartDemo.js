@@ -6,17 +6,17 @@ var Highcharts = require("highcharts/highmaps");
 function HighChartDemo(props) {
 
     // const {dataToMap,mapPeriods}=useContext(ANCCoverageContext)
-    const {data,chartType,period}=props;
+    const {data,chartType,period,graphTitle,graphSubTitile}=props;
     // console.log(dataToMap)
   let options = {
     chart: {
       type: chartType,
     },
     title: {
-      text: "Monthly Average Rainfall",
+      text: graphTitle,
     },
     subtitle: {
-      text: "Source: WorldClimate.com",
+      text: graphSubTitile,
     },
     xAxis: {
       categories: period,
@@ -25,14 +25,14 @@ function HighChartDemo(props) {
     yAxis: {
       min: 0,
       title: {
-        text: "Rainfall (mm)",
+        text: "Number",
       },
     },
     tooltip: {
       headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
       pointFormat:
         '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-        '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+        '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
       footerFormat: "</table>",
       shared: true,
       useHTML: true,

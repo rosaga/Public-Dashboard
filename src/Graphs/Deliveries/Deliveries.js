@@ -9,7 +9,7 @@ function Deliveries() {
         <div>
            
             {/* <SubdivisionFilter></SubdivisionFilter> */}
-     <HighChartDemo data={dataToMap} chartType="line" period={mapPeriods}></HighChartDemo>
+     <HighChartDemo graphTitle="Deliveries" data={dataToMap} chartType="line" period={mapPeriods}></HighChartDemo>
             
         </div>
     )
