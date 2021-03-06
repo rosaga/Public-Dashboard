@@ -9,10 +9,9 @@ function ContextProviders(props) {
   return (
     <>
       <AppContextProvider>
-          <OrgUnitsContextProvider>
+        <OrgUnitsContextProvider>
           <DiseaseSurveillanceProvider>{children}</DiseaseSurveillanceProvider>
-          </OrgUnitsContextProvider>
-       
+        </OrgUnitsContextProvider>
       </AppContextProvider>
     </>
   );
